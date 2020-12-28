@@ -100,36 +100,37 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.60;
+float alpha = 0.75;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 
         /* 8 normal colors */
-        "#181c30",
-        "#f92672",
-        "#82b414",
-        "#fd971f",
+        "#1b1d1e",
+        "#ee0061",
+        "#00d492",
+        "#dcde19",
         "#0066cc",
         "#8c54fe",
-        "#810dbf",
+        "#44a3e7",
         "#ccccc6",
 
         /* 8 bright colors */
         "#505354",
-        "#ff5995",
-        "#b6e354",
-        "#feed6c",
+        "#b5205d",
+        "#00b37b",
+        "#b6b82b",
         "#333399",
-        "#8c54fe",
-        "#8442ff",
+        "#6d00cc",
+        "#277dbc",
         "#f8f8f2",
 
-	"#181c30",
+		"#181c30",
         [255] = 0,
         /* more colors can be added after 255 to use with DefaultXX */
-	[256] = "#ccccc6",
-	[257] = "#181c10"
+	[256] = "#181c30",
+	[257] = "#181c30",
+	[258] = "#ffffff"
 
 
 };
@@ -139,10 +140,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 257;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 258;
 
 /*
  * Default shape of cursor
@@ -183,6 +184,19 @@ static uint forcemousemod = ShiftMask;
 /*
  * Xresources preferences to load at startup
  */
+ResourcePref resources[] = {
+		{ "font",         STRING,  &font },
+		{ "termname",     STRING,  &termname },
+		{ "shell",        STRING,  &shell },
+		{ "minlatency",   INTEGER, &minlatency },
+		{ "maxlatency",   INTEGER, &maxlatency },
+		{ "blinktimeout", INTEGER, &blinktimeout },
+		{ "bellvolume",   INTEGER, &bellvolume },
+		{ "tabspaces",    INTEGER, &tabspaces },
+		{ "borderpx",     INTEGER, &borderpx },
+		{ "cwscale",      FLOAT,   &cwscale },
+		{ "chscale",      FLOAT,   &chscale },
+};
 
 /*
  * Internal mouse shortcuts.
