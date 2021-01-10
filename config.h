@@ -8,8 +8,8 @@
 static char *font = "Fira Code:pixelsize=24:bold:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"Noto Color Emoji:pixelsize=15:antialias=true:autohint=true"    
-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
+	"Noto Color Emoji:pixelsize=15:antialias=true:autohint=true",    
+	"FontAwesome:style=Regular:antialias=true:pixelsize:24" 
 };
 
 static int borderpx = 4;
@@ -150,7 +150,6 @@ static unsigned int defaultrcs = 258;
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("☃")
  */
 static unsigned int cursorshape = 2;
 
