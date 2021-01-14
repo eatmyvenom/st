@@ -125,7 +125,30 @@ static const char *colorname[] = {
         "#277dbc",
         "#f8f8f2",
 
-        /* more colors can be added after 255 to use with DefaultXX */
+	/* *Sigh* time for a nice talk about colors.
+         * In my code for my computer dot files I have
+         * made sure that all the colors are very
+         * exact with eachother, everything needs to
+         * look uniform. But recently I was just 
+         * trynna make my ST look uniform when I 
+         * noticed that the background color was just
+         * a little bit brighter than everything else
+         * using the color #181c30. At first i thought
+         * that the transparency was off but quickly 
+         * found that to be incorrect. So then I just
+         * delt with it for a while until I decided to
+         * see if there was something wrong with going
+         * outside of 256 colors. Turns out that also
+         * was not the issue. So then I killed picom
+         * and did some investigating. It turns out
+         * that when i run grabc on ST the color it
+         * returns is #181c30. But on every other thing
+         * in my dots it returns #0e101c. So here i am
+         * using the wrong color because well, I dont
+         * actually know why.
+         */
+         
+
 	[256] = "#0e101c",
 	[257] = "#0e101c",
 	[258] = "#ffffff"
