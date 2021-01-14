@@ -1,4 +1,3 @@
-/* See LICENSE for license details. */
 #include <errno.h>
 #include <math.h>
 #include <limits.h>
@@ -22,7 +21,6 @@ char *argv0;
 #include "win.h"
 #include "hb.h"
 
-/* types used in config.h */
 typedef struct {
 	uint mod;
 	KeySym keysym;
@@ -48,7 +46,6 @@ typedef struct {
 	signed char appcursor; /* application cursor */
 } Key;
 
-/* Xresources preferences */
 enum resource_type {
 	STRING = 0,
 	INTEGER = 1,
@@ -221,16 +218,8 @@ static void (*handler[LASTEvent])(XEvent *) = {
 	[MotionNotify] = bmotion,
 	[ButtonPress] = bpress,
 	[ButtonRelease] = brelease,
-/*
- * Uncomment if you want the selection to disappear when you select something
- * different in another window.
- */
-/*	[SelectionClear] = selclear_, */
+//	[SelectionClear] = selclear_,
 	[SelectionNotify] = selnotify,
-/*
- * PropertyNotify is only turned on when there is some INCR transfer happening
- * for the selection retrieval.
- */
 	[PropertyNotify] = propnotify,
 	[SelectionRequest] = selrequest,
 };
@@ -1893,7 +1882,6 @@ kmap(KeySym k, uint state)
 	Key *kp;
 	int i;
 
-	/* Check for mapped keys out of X11 function keys. */
 	for (i = 0; i < LEN(mappedkeys); i++) {
 		if (mappedkeys[i] == k)
 			break;
@@ -1977,10 +1965,6 @@ kpress(XEvent *ev)
 void
 cmessage(XEvent *e)
 {
-	/*
-	 * See xembed specs
-	 *  http://standards.freedesktop.org/xembed-spec/xembed-spec-latest.html
-	 */
 	if (e->xclient.message_type == xw.xembed && e->xclient.format == 32) {
 		if (e->xclient.data.l[1] == XEMBED_FOCUS_IN) {
 			win.mode |= MODE_FOCUSED;
