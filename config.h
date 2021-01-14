@@ -8,7 +8,7 @@
 static char *font = "Fira Code:pixelsize=24:bold:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"Noto Color Emoji:pixelsize=15:antialias=true:autohint=true",    
+	"Noto Color Emoji:pixelsize=24:antialias=true:autohint=true",    
 	"FontAwesome:style=Regular:antialias=true:pixelsize:24" 
 };
 
@@ -100,7 +100,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.80;
+float alpha = 0.60;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -125,11 +125,9 @@ static const char *colorname[] = {
         "#277dbc",
         "#f8f8f2",
 
-		"#181c30",
-        [255] = 0,
         /* more colors can be added after 255 to use with DefaultXX */
-	[256] = "#181c30",
-	[257] = "#181c30",
+	[256] = "#0e101c",
+	[257] = "#0e101c",
 	[258] = "#ffffff"
 
 
