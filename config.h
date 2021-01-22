@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code Medium:pixelsize=24:antialias=true:autohint=true";
+static char *font = "Fira Code Medium:pixelsize=24:bold:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"Noto Color Emoji:pixelsize=24:antialias=true:autohint=true",    
-	"FontAwesome:style=Regular:antialias=true:pixelsize:24" 
+	"Twemoji:style=Regular:pixelsize=48:bold:antialias=true:autohint=true",    
+	"FontAwesome:style=Regular:bold:antialias=true:pixelsize:48",
 };
 
 static int borderpx = 4;
@@ -207,6 +207,7 @@ static uint forcemousemod = ShiftMask;
 ResourcePref resources[] = {
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
+
 		{ "minlatency",   INTEGER, &minlatency },
 		{ "maxlatency",   INTEGER, &maxlatency },
 		{ "blinktimeout", INTEGER, &blinktimeout },
