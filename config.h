@@ -1,16 +1,17 @@
 /* See LICENSE file for copyright and license details. */
 
-/*
- * appearance
- *
- * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
- */
 static char *font = "Fira Code Medium:pixelsize=24:bold:antialias=true:autohint=true";
-/* Spare fonts */
 static char *font2[] = {
+	"MesloLGS Nerd Font Mono:style=Regular",
 	"Twemoji:style=Regular:pixelsize=48:bold:antialias=true:autohint=true",    
 	"FontAwesome:style=Regular:bold:antialias=true:pixelsize:48",
+	"Icons:style=Regular:bold:antialias=true:pixelsize:48",
+	"DejaVu Sans:style=Book:pixelsize:48:antialias=true",
+	"Apple Color Emoji:style=Regualr:pixelsize:48"
 };
+
+// I'm trying so desperately hard to get the fucking fonts to not crash ST
+// I am struggling
 
 static int borderpx = 4;
 
@@ -36,7 +37,7 @@ static float cwscale = 1.0;
 static float chscale = 1.0;
 
 /*
- * word delimiter string
+ * word delimiter stringc
  *
  * More advanced example: L" `'\"()[]{}"
  */
